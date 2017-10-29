@@ -8,3 +8,4 @@ C:\xampp\htdocs\music-school\Nota musical\obj\Debug\Nota musical.csproj.Generate
 C:\xampp\htdocs\music-school\Nota musical\obj\Debug\Nota musical.csproj.CoreCompileInputs.cache
 C:\xampp\htdocs\music-school\Nota musical\obj\Debug\Nota musical.exe
 C:\xampp\htdocs\music-school\Nota musical\obj\Debug\Nota musical.pdb
+C:\xampp\htdocs\music-school\Nota musical\bin\Debug\NotaMusical.accdb
