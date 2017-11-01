@@ -9,3 +9,14 @@ C:\xampp\htdocs\music-school\Nota musical\obj\Debug\Nota musical.csproj.CoreComp
 C:\xampp\htdocs\music-school\Nota musical\obj\Debug\Nota musical.exe
 C:\xampp\htdocs\music-school\Nota musical\obj\Debug\Nota musical.pdb
 C:\xampp\htdocs\music-school\Nota musical\bin\Debug\NotaMusical.accdb
+C:\Users\USUARIO\Desktop\music-school\Nota musical\bin\Debug\NotaMusical.accdb
+C:\Users\USUARIO\Desktop\music-school\Nota musical\bin\Debug\Nota musical.exe.config
+C:\Users\USUARIO\Desktop\music-school\Nota musical\bin\Debug\Nota musical.exe
+C:\Users\USUARIO\Desktop\music-school\Nota musical\bin\Debug\Nota musical.pdb
+C:\Users\USUARIO\Desktop\music-school\Nota musical\obj\Debug\Nota musical.csprojResolveAssemblyReference.cache
+C:\Users\USUARIO\Desktop\music-school\Nota musical\obj\Debug\Nota_musical.Form1.resources
+C:\Users\USUARIO\Desktop\music-school\Nota musical\obj\Debug\Nota_musical.Properties.Resources.resources
+C:\Users\USUARIO\Desktop\music-school\Nota musical\obj\Debug\Nota musical.csproj.GenerateResource.Cache
+C:\Users\USUARIO\Desktop\music-school\Nota musical\obj\Debug\Nota musical.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Desktop\music-school\Nota musical\obj\Debug\Nota musical.exe
+C:\Users\USUARIO\Desktop\music-school\Nota musical\obj\Debug\Nota musical.pdb
