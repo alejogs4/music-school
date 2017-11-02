@@ -20,3 +20,34 @@ C:\Users\USUARIO\Desktop\music-school\Nota musical\obj\Debug\Nota musical.csproj
 C:\Users\USUARIO\Desktop\music-school\Nota musical\obj\Debug\Nota musical.csproj.CoreCompileInputs.cache
 C:\Users\USUARIO\Desktop\music-school\Nota musical\obj\Debug\Nota musical.exe
 C:\Users\USUARIO\Desktop\music-school\Nota musical\obj\Debug\Nota musical.pdb
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\Nota musical\bin\Debug\Nota musical.exe.config
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\Nota musical\obj\Debug\Nota musical.exe
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\Nota musical\obj\Debug\Nota musical.pdb
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\Nota musical\obj\Debug\Nota musical.csprojResolveAssemblyReference.cache
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\Nota musical\obj\Debug\Nota_musical.Form1.resources
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\Nota musical\obj\Debug\Nota_musical.Properties.Resources.resources
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\Nota musical\obj\Debug\Nota musical.csproj.GenerateResource.Cache
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\Nota musical\bin\Debug\NotaMusical.accdb
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\Nota musical\bin\Debug\Nota musical.exe
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\Nota musical\bin\Debug\Nota musical.pdb
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\bin\Debug\Nota musical.exe.config
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\obj\Debug\Nota musical.exe
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\obj\Debug\Nota musical.pdb
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\bin\Debug\NotaMusical.accdb
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\bin\Debug\Nota musical.exe
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\bin\Debug\Nota musical.pdb
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\obj\Debug\Nota musical.csprojResolveAssemblyReference.cache
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\obj\Debug\Nota_musical.Form1.resources
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\obj\Debug\Nota_musical.Properties.Resources.resources
+C:\Users\llondono2\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\obj\Debug\Nota musical.csproj.GenerateResource.Cache
+C:\Users\USUARIO\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\bin\Debug\NotaMusical.accdb
+C:\Users\USUARIO\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\bin\Debug\Nota musical.exe.config
+C:\Users\USUARIO\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\bin\Debug\Nota musical.exe
+C:\Users\USUARIO\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\bin\Debug\Nota musical.pdb
+C:\Users\USUARIO\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\obj\Debug\Nota musical.csprojResolveAssemblyReference.cache
+C:\Users\USUARIO\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\obj\Debug\Nota_musical.Form1.resources
+C:\Users\USUARIO\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\obj\Debug\Nota_musical.Properties.Resources.resources
+C:\Users\USUARIO\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\obj\Debug\Nota musical.csproj.GenerateResource.Cache
+C:\Users\USUARIO\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\obj\Debug\Nota musical.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\obj\Debug\Nota musical.exe
+C:\Users\USUARIO\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\obj\Debug\Nota musical.pdb

@@ -13,9 +13,6 @@ namespace Nota_musical
     public partial class Form1 : Form
     {
         BD dataBase = new BD();
-        DataTable students = new DataTable();
-        List<string> names = new List<string>();
-        List<string> ids = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -38,8 +35,23 @@ namespace Nota_musical
             {
                 dataBase.insertStudents(txt_nombre_estudiante.Text, txt_apellidos.Text, maskedTextBox1.Text, 0);
                 MessageBox.Show("Estudiante ingresado satisfactoriamente");
-                updateComboBox();
+                
                 clear();
+            }
+            else
+            {
+                MessageBox.Show("Todos los campos deben estar llenos");
+            }
+        }
+
+        public void insertCourses()
+        {
+            if (txt_nombre_curso.Text != "" && txt_valor.Text != "" && txt_instructor.Text != "")
+            {
+                dataBase.insertCourses(txt_nombre_curso.Text, Double.Parse(txt_valor.Text), txt_instructor.Text);
+                MessageBox.Show("Curso registrado exitosamente");
+                this.cursoTableAdapter.Fill(this.notaMusicalDataSet.curso);
+                comboBox1.DataSource = this.cursoBindingSource;
             }
             else
             {
@@ -49,31 +61,17 @@ namespace Nota_musical
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            updateComboBox();
+            // TODO: This line of code loads data into the 'notaMusicalDataSet.curso' table. You can move, or remove it, as needed.
+            this.cursoTableAdapter.Fill(this.notaMusicalDataSet.curso);
+            // TODO: This line of code loads data into the 'notaMusicalDataSet.estudiante' table. You can move, or remove it, as needed.
+            this.estudianteTableAdapter.Fill(this.notaMusicalDataSet.estudiante);
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = dataBase.selectStudents();
-            MessageBox.Show(names.Count + "");
-        }
-        public void updateComboBox()
-        {
-            names.Clear();
-            ids.Clear();
-            dataGridView1.DataSource = null;
-            cmb_estudiantes.DataSource = null;
-            DataTable StudentTable = dataBase.selectStudents();
-            dataGridView1.DataSource = StudentTable;
-            StudentTable = null;
-
-            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-            {
-                names.Add(dataGridView1.Rows[i].Cells[1].Value.ToString());
-                ids.Add((dataGridView1.Rows[i].Cells[0].Value.ToString()));
-            }
-            cmb_estudiantes.DataSource = names;
-            cmb_estudiantes.ValueMember = ids;
+            
         }
         public void clear()
         {
@@ -83,6 +81,64 @@ namespace Nota_musical
             txt_instructor.Text = "";
             txt_nombre_curso.Text = "";
             txt_valor.Text = "";
+        }
+
+        private void btn_inscribir_curso_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insertCourses();
+            }catch(Exception x)
+            {
+                Console.WriteLine(x.Message);
+            }
+        }
+
+        private void btn_matricular_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                insertStudentCourse();
+            }catch(Exception x)
+            {
+                MessageBox.Show(x+"");
+            }
+        }
+        private void insertStudentCourse()
+        {
+            if (cmb_estudiantes.Text != "" && comboBox1.Text != "")
+            {
+                dataBase.insertStudentsCourse(int.Parse(comboBox1.SelectedValue.ToString()),int.Parse(cmb_estudiantes.SelectedValue.ToString()));
+                MessageBox.Show("Estudiante matriculado exitosamente en el curso");
+            }
+            else
+            {
+                MessageBox.Show("Todos los campos deben estar llenos");
+            }
+        }
+
+        private void btn_actualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                updateCourseValue();
+            }catch(Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+        }
+
+        private void updateCourseValue()
+        {
+            if (cmb_actualizar.Text != "" && txt_id_course.Text != "")
+            {
+                dataBase.updateCourseValue(int.Parse(cmb_actualizar.SelectedValue.ToString()), Double.Parse(txt_id_course.Text));
+                MessageBox.Show("Valor del curso actualizado");
+            }
+            else
+            {
+                MessageBox.Show("Todos los campos deben estar llenos");
+            }
         }
     }
 }
