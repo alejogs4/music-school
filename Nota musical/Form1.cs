@@ -23,7 +23,8 @@ namespace Nota_musical
             try
             {
                 insertStudents();
-            } catch(Exception x)
+            }
+            catch (Exception x)
             {
                 Console.Write(x.Message);
             }
@@ -35,7 +36,7 @@ namespace Nota_musical
             {
                 dataBase.insertStudents(txt_nombre_estudiante.Text, txt_apellidos.Text, maskedTextBox1.Text, 0);
                 MessageBox.Show("Estudiante ingresado satisfactoriamente");
-                
+
                 clear();
             }
             else
@@ -71,7 +72,7 @@ namespace Nota_musical
         private void button2_Click(object sender, EventArgs e)
         {
             dgv_costo.DataSource = dataBase.selectStudents();
-            
+
         }
         public void clear()
         {
@@ -88,7 +89,8 @@ namespace Nota_musical
             try
             {
                 insertCourses();
-            }catch(Exception x)
+            }
+            catch (Exception x)
             {
                 Console.WriteLine(x.Message);
             }
@@ -99,16 +101,17 @@ namespace Nota_musical
             try
             {
                 insertStudentCourse();
-            }catch(Exception x)
+            }
+            catch (Exception x)
             {
-                MessageBox.Show(x+"");
+                MessageBox.Show(x + "");
             }
         }
         private void insertStudentCourse()
         {
             if (cmb_estudiantes.Text != "" && comboBox1.Text != "")
             {
-                dataBase.insertStudentsCourse(int.Parse(comboBox1.SelectedValue.ToString()),int.Parse(cmb_estudiantes.SelectedValue.ToString()));
+                dataBase.insertStudentsCourse(int.Parse(comboBox1.SelectedValue.ToString()), int.Parse(cmb_estudiantes.SelectedValue.ToString()));
                 MessageBox.Show("Estudiante matriculado exitosamente en el curso");
             }
             else
@@ -122,7 +125,8 @@ namespace Nota_musical
             try
             {
                 updateCourseValue();
-            }catch(Exception x)
+            }
+            catch (Exception x)
             {
                 MessageBox.Show(x.Message);
             }
@@ -146,7 +150,8 @@ namespace Nota_musical
             try
             {
                 showStudentCost();
-            }catch(Exception x)
+            }
+            catch (Exception x)
             {
                 MessageBox.Show(x.Message);
             }
@@ -155,13 +160,46 @@ namespace Nota_musical
         {
             if (cmb_estudiante_matricula.Text != "")
             {
-                dgv_costo.DataSource=dataBase.selectStudentCost(int.Parse(cmb_estudiante_matricula.SelectedValue.ToString()));
+                dgv_costo.DataSource = null;
+                dgv_costo.DataSource = dataBase.selectStudentCost(int.Parse(cmb_estudiante_matricula.SelectedValue.ToString()));
 
             }
             else
             {
                 MessageBox.Show("Debes seleccionar un estudiante");
             }
+        }
+
+        private void btn_generar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                selectStudentsCourse();
+            }catch(Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+        }
+        private void selectStudentsCourse()
+        {
+            dgv_panel.DataSource = null;
+            dgv_panel.DataSource = dataBase.selectStudentsCourse(int.Parse(cmb_curso_reporte.SelectedValue.ToString()));
+        }
+
+        private void btn_cursos_recogido_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                selectCashCourse();
+            }catch(Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+        }
+        private void selectCashCourse()
+        {
+            dgv_panel.DataSource = null;
+            dgv_panel.DataSource = dataBase.selectCashCourse(int.Parse(cmb_curso_reporte.SelectedValue.ToString()));
         }
     }
 }

@@ -17,6 +17,7 @@ namespace Nota_musical
         DataTable courseTable = new DataTable();
         DataTable valueTable = new DataTable();
         DataTable costTable = new DataTable();
+        DataTable studentsCoursesTable = new DataTable();
         public DataTable selectStudents()
         {
             studentTable = new DataTable();
@@ -51,10 +52,27 @@ namespace Nota_musical
         }
         public DataTable selectStudentCost(int id)
         {
-            SQL = "SELECT curso.Id, curso.nombre,SUM(curso.valor) AS ValorCurso, estudiante.nombre FROM estudiante INNER JOIN (curso INNER JOIN curso_estudiante ON cursos.Id = curso_estudiante.Id_curso) ON estudiante.Id = tb_CursosEscogidos.IdEstudiante WHERE NombreCurso = '" + id + "'";
+            courseTable = new DataTable();
+            SQL = "SELECT Sum(curso.valor) AS SumaDeValorCurso FROM curso INNER JOIN curso_estudiante ON curso.Id = curso_estudiante.Id_curso Where curso_estudiante.id_estudiante = " + id + "";
             Adapter = new OleDbDataAdapter(SQL, conection);
             Adapter.Fill(courseTable);
             return courseTable;
+        }
+        public DataTable selectStudentsCourse(int id)
+        {
+            studentsCoursesTable = new DataTable();
+            SQL = "SELECT estudiante.nombre FROM estudiante INNER JOIN curso_estudiante ON curso_estudiante.id_estudiante = estudiante.Id Where curso_estudiante.Id_curso = " + id + "";
+            Adapter = new OleDbDataAdapter(SQL, conection);
+            Adapter.Fill(studentsCoursesTable);
+            return studentsCoursesTable;            
+        }
+        public DataTable selectCashCourse(int id)
+        {
+            studentsCoursesTable = new DataTable();
+            SQL="SELECT SUM(curso.valor) FROM curso INNER JOIN curso_estudiante ON curso_estudiante.Id_curso = curso.Id WHERE curso_estudiante.Id_curso="+id+"";
+            Adapter = new OleDbDataAdapter(SQL, conection);
+            Adapter.Fill(studentsCoursesTable);
+            return studentsCoursesTable;
         }
     }
 }
