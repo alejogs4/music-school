@@ -70,7 +70,7 @@ namespace Nota_musical
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = dataBase.selectStudents();
+            dgv_costo.DataSource = dataBase.selectStudents();
             
         }
         public void clear()
@@ -138,6 +138,29 @@ namespace Nota_musical
             else
             {
                 MessageBox.Show("Todos los campos deben estar llenos");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                showStudentCost();
+            }catch(Exception x)
+            {
+                MessageBox.Show(x.Message);
+            }
+        }
+        private void showStudentCost()
+        {
+            if (cmb_estudiante_matricula.Text != "")
+            {
+                dgv_costo.DataSource=dataBase.selectStudentCost(int.Parse(cmb_estudiante_matricula.SelectedValue.ToString()));
+
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar un estudiante");
             }
         }
     }

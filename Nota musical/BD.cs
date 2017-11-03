@@ -10,12 +10,13 @@ namespace Nota_musical
 {
     class BD
     {
-        string conection= @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\USUARIO\Downloads\music-school-master\music-school-master\music-school-master\Nota musical\NotaMusical.accdb";
+        string conection= @"Provider=Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\USUARIO\Documents\GitHub\music-school\Nota musical\NotaMusical.accdb";
         string SQL;
         OleDbDataAdapter Adapter = new OleDbDataAdapter();
         DataTable studentTable = new DataTable();
         DataTable courseTable = new DataTable();
         DataTable valueTable = new DataTable();
+        DataTable costTable = new DataTable();
         public DataTable selectStudents()
         {
             studentTable = new DataTable();
@@ -47,6 +48,13 @@ namespace Nota_musical
             SQL = "UPDATE curso SET valor='" + newValue + "' WHERE Id ="+ id +";";
             Adapter = new OleDbDataAdapter(SQL, conection);
             Adapter.Fill(courseTable);
+        }
+        public DataTable selectStudentCost(int id)
+        {
+            SQL = "SELECT curso.Id, curso.nombre,SUM(curso.valor) AS ValorCurso, estudiante.nombre FROM estudiante INNER JOIN (curso INNER JOIN curso_estudiante ON cursos.Id = curso_estudiante.Id_curso) ON estudiante.Id = tb_CursosEscogidos.IdEstudiante WHERE NombreCurso = '" + id + "'";
+            Adapter = new OleDbDataAdapter(SQL, conection);
+            Adapter.Fill(courseTable);
+            return courseTable;
         }
     }
 }

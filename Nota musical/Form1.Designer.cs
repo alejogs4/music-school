@@ -61,16 +61,18 @@
             this.estudianteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_id_course = new System.Windows.Forms.MaskedTextBox();
+            this.btn_actualizar = new System.Windows.Forms.Button();
+            this.cmb_actualizar = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.estudianteTableAdapter = new Nota_musical.NotaMusicalDataSetTableAdapters.estudianteTableAdapter();
             this.cursoTableAdapter = new Nota_musical.NotaMusicalDataSetTableAdapters.cursoTableAdapter();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label12 = new System.Windows.Forms.Label();
-            this.cmb_actualizar = new System.Windows.Forms.ComboBox();
-            this.btn_actualizar = new System.Windows.Forms.Button();
-            this.txt_id_course = new System.Windows.Forms.MaskedTextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.cmb_estudiante_matricula = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgv_costo = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -81,8 +83,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.notaMusicalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_costo)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -393,40 +395,16 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Controls.Add(this.button2);
+            this.tabPage3.Controls.Add(this.dgv_costo);
+            this.tabPage3.Controls.Add(this.button1);
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.cmb_estudiante_matricula);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(836, 443);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Valor matricula";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(55, 138);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(748, 222);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(362, 81);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // estudianteTableAdapter
-            // 
-            this.estudianteTableAdapter.ClearBeforeFill = true;
-            // 
-            // cursoTableAdapter
-            // 
-            this.cursoTableAdapter.ClearBeforeFill = true;
             // 
             // tabPage4
             // 
@@ -442,26 +420,23 @@
             this.tabPage4.Text = "Actualizar datos";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label12
+            // label13
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F);
-            this.label12.Location = new System.Drawing.Point(205, 31);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(406, 39);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Actualizar valor del curso";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(342, 185);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(111, 13);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Nuevo valor del curso";
             // 
-            // cmb_actualizar
+            // txt_id_course
             // 
-            this.cmb_actualizar.DataSource = this.cursoBindingSource;
-            this.cmb_actualizar.DisplayMember = "nombre";
-            this.cmb_actualizar.FormattingEnabled = true;
-            this.cmb_actualizar.Location = new System.Drawing.Point(300, 139);
-            this.cmb_actualizar.Name = "cmb_actualizar";
-            this.cmb_actualizar.Size = new System.Drawing.Size(191, 21);
-            this.cmb_actualizar.TabIndex = 1;
-            this.cmb_actualizar.ValueMember = "Id";
+            this.txt_id_course.Location = new System.Drawing.Point(300, 201);
+            this.txt_id_course.Mask = "99999999999999999999";
+            this.txt_id_course.Name = "txt_id_course";
+            this.txt_id_course.Size = new System.Drawing.Size(191, 20);
+            this.txt_id_course.TabIndex = 3;
+            this.txt_id_course.ValidatingType = typeof(int);
             // 
             // btn_actualizar
             // 
@@ -476,23 +451,76 @@
             this.btn_actualizar.UseVisualStyleBackColor = false;
             this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
-            // txt_id_course
+            // cmb_actualizar
             // 
-            this.txt_id_course.Location = new System.Drawing.Point(300, 201);
-            this.txt_id_course.Mask = "99999999999999999999";
-            this.txt_id_course.Name = "txt_id_course";
-            this.txt_id_course.Size = new System.Drawing.Size(191, 20);
-            this.txt_id_course.TabIndex = 3;
-            this.txt_id_course.ValidatingType = typeof(int);
+            this.cmb_actualizar.DataSource = this.cursoBindingSource;
+            this.cmb_actualizar.DisplayMember = "nombre";
+            this.cmb_actualizar.FormattingEnabled = true;
+            this.cmb_actualizar.Location = new System.Drawing.Point(300, 139);
+            this.cmb_actualizar.Name = "cmb_actualizar";
+            this.cmb_actualizar.Size = new System.Drawing.Size(191, 21);
+            this.cmb_actualizar.TabIndex = 1;
+            this.cmb_actualizar.ValueMember = "Id";
             // 
-            // label13
+            // label12
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(342, 185);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(111, 13);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Nuevo valor del curso";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F);
+            this.label12.Location = new System.Drawing.Point(205, 31);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(406, 39);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Actualizar valor del curso";
+            // 
+            // estudianteTableAdapter
+            // 
+            this.estudianteTableAdapter.ClearBeforeFill = true;
+            // 
+            // cursoTableAdapter
+            // 
+            this.cursoTableAdapter.ClearBeforeFill = true;
+            // 
+            // cmb_estudiante_matricula
+            // 
+            this.cmb_estudiante_matricula.DataSource = this.estudianteBindingSource;
+            this.cmb_estudiante_matricula.DisplayMember = "nombre";
+            this.cmb_estudiante_matricula.FormattingEnabled = true;
+            this.cmb_estudiante_matricula.Location = new System.Drawing.Point(270, 56);
+            this.cmb_estudiante_matricula.Name = "cmb_estudiante_matricula";
+            this.cmb_estudiante_matricula.Size = new System.Drawing.Size(243, 21);
+            this.cmb_estudiante_matricula.TabIndex = 0;
+            this.cmb_estudiante_matricula.ValueMember = "Id";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.label14.Location = new System.Drawing.Point(263, 14);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(250, 39);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Valor matricula";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(270, 83);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(243, 45);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Consultar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dgv_costo
+            // 
+            this.dgv_costo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_costo.Location = new System.Drawing.Point(51, 134);
+            this.dgv_costo.Name = "dgv_costo";
+            this.dgv_costo.Size = new System.Drawing.Size(737, 295);
+            this.dgv_costo.TabIndex = 3;
             // 
             // Form1
             // 
@@ -518,9 +546,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.notaMusicalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.estudianteBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_costo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -552,8 +581,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
         private NotaMusicalDataSet notaMusicalDataSet;
         private System.Windows.Forms.BindingSource estudianteBindingSource;
         private NotaMusicalDataSetTableAdapters.estudianteTableAdapter estudianteTableAdapter;
@@ -569,6 +596,10 @@
         private System.Windows.Forms.ComboBox cmb_actualizar;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.MaskedTextBox txt_id_course;
+        private System.Windows.Forms.DataGridView dgv_costo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cmb_estudiante_matricula;
     }
 }
 
