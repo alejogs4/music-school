@@ -72,6 +72,7 @@
             this.cmb_actualizar = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.btn_cursos_recogido = new System.Windows.Forms.Button();
             this.dgv_panel = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btn_generar = new System.Windows.Forms.Button();
@@ -80,7 +81,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.estudianteTableAdapter = new Nota_musical.NotaMusicalDataSetTableAdapters.estudianteTableAdapter();
             this.cursoTableAdapter = new Nota_musical.NotaMusicalDataSetTableAdapters.cursoTableAdapter();
-            this.btn_cursos_recogido = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -529,7 +529,6 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.btn_cursos_recogido);
             this.tabPage5.Controls.Add(this.dgv_panel);
             this.tabPage5.Controls.Add(this.groupBox5);
             this.tabPage5.Controls.Add(this.label15);
@@ -539,6 +538,19 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Reportes";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // btn_cursos_recogido
+            // 
+            this.btn_cursos_recogido.BackColor = System.Drawing.Color.Teal;
+            this.btn_cursos_recogido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cursos_recogido.ForeColor = System.Drawing.Color.White;
+            this.btn_cursos_recogido.Location = new System.Drawing.Point(101, 188);
+            this.btn_cursos_recogido.Name = "btn_cursos_recogido";
+            this.btn_cursos_recogido.Size = new System.Drawing.Size(213, 45);
+            this.btn_cursos_recogido.TabIndex = 3;
+            this.btn_cursos_recogido.Text = "Generar reporte cursos";
+            this.btn_cursos_recogido.UseVisualStyleBackColor = false;
+            this.btn_cursos_recogido.Click += new System.EventHandler(this.btn_cursos_recogido_Click);
             // 
             // dgv_panel
             // 
@@ -551,6 +563,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.btn_cursos_recogido);
             this.groupBox5.Controls.Add(this.btn_generar);
             this.groupBox5.Controls.Add(this.label16);
             this.groupBox5.Controls.Add(this.cmb_curso_reporte);
@@ -566,7 +579,7 @@
             this.btn_generar.BackColor = System.Drawing.Color.Teal;
             this.btn_generar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_generar.ForeColor = System.Drawing.Color.White;
-            this.btn_generar.Location = new System.Drawing.Point(101, 137);
+            this.btn_generar.Location = new System.Drawing.Point(101, 117);
             this.btn_generar.Name = "btn_generar";
             this.btn_generar.Size = new System.Drawing.Size(213, 45);
             this.btn_generar.TabIndex = 2;
@@ -611,19 +624,6 @@
             // cursoTableAdapter
             // 
             this.cursoTableAdapter.ClearBeforeFill = true;
-            // 
-            // btn_cursos_recogido
-            // 
-            this.btn_cursos_recogido.BackColor = System.Drawing.Color.Teal;
-            this.btn_cursos_recogido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cursos_recogido.ForeColor = System.Drawing.Color.White;
-            this.btn_cursos_recogido.Location = new System.Drawing.Point(356, 323);
-            this.btn_cursos_recogido.Name = "btn_cursos_recogido";
-            this.btn_cursos_recogido.Size = new System.Drawing.Size(213, 45);
-            this.btn_cursos_recogido.TabIndex = 3;
-            this.btn_cursos_recogido.Text = "Generar reporte cursos";
-            this.btn_cursos_recogido.UseVisualStyleBackColor = false;
-            this.btn_cursos_recogido.Click += new System.EventHandler(this.btn_cursos_recogido_Click);
             // 
             // Form1
             // 

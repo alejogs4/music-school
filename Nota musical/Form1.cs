@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -51,7 +52,7 @@ namespace Nota_musical
             {
                 dataBase.insertCourses(txt_nombre_curso.Text, Double.Parse(txt_valor.Text), txt_instructor.Text);
                 MessageBox.Show("Curso registrado exitosamente");
-                this.cursoTableAdapter.Fill(this.notaMusicalDataSet.curso);
+                updateComboBox();
                 comboBox1.DataSource = this.cursoBindingSource;
             }
             else
@@ -67,6 +68,13 @@ namespace Nota_musical
             // TODO: This line of code loads data into the 'notaMusicalDataSet.estudiante' table. You can move, or remove it, as needed.
             this.estudianteTableAdapter.Fill(this.notaMusicalDataSet.estudiante);
 
+        }
+        private void updateComboBox()
+        {
+            // TODO: This line of code loads data into the 'notaMusicalDataSet.curso' table. You can move, or remove it, as needed.
+            this.cursoTableAdapter.Fill(this.notaMusicalDataSet.curso);
+            // TODO: This line of code loads data into the 'notaMusicalDataSet.estudiante' table. You can move, or remove it, as needed.
+            this.estudianteTableAdapter.Fill(this.notaMusicalDataSet.estudiante);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -101,6 +109,9 @@ namespace Nota_musical
             try
             {
                 insertStudentCourse();
+            }catch(OleDbException ex)
+            {
+                MessageBox.Show("El estudiante ya esta matriculado en este curso");
             }
             catch (Exception x)
             {
@@ -113,6 +124,7 @@ namespace Nota_musical
             {
                 dataBase.insertStudentsCourse(int.Parse(comboBox1.SelectedValue.ToString()), int.Parse(cmb_estudiantes.SelectedValue.ToString()));
                 MessageBox.Show("Estudiante matriculado exitosamente en el curso");
+                updateComboBox();
             }
             else
             {
@@ -125,6 +137,7 @@ namespace Nota_musical
             try
             {
                 updateCourseValue();
+                updateComboBox();
             }
             catch (Exception x)
             {
@@ -138,6 +151,7 @@ namespace Nota_musical
             {
                 dataBase.updateCourseValue(int.Parse(cmb_actualizar.SelectedValue.ToString()), Double.Parse(txt_id_course.Text));
                 MessageBox.Show("Valor del curso actualizado");
+                updateComboBox();
             }
             else
             {
@@ -191,9 +205,10 @@ namespace Nota_musical
             try
             {
                 selectCashCourse();
-            }catch(Exception x)
+            }
+            catch (Exception x)
             {
-                MessageBox.Show(x.Message);
+                MessageBox.Show(x+"");
             }
         }
         private void selectCashCourse()
